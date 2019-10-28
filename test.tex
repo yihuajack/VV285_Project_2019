@@ -1,0 +1,216 @@
+\documentclass[10pt]{article}
+\usepackage{makeidx}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[dvipsnames,svgnames,table]{xcolor}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\author{星宇 朱}
+\title{}
+\usepackage[paperwidth=595pt,paperheight=841pt,top=72pt,right=90pt,bottom=72pt,left=90pt]{geometry}
+
+\makeatletter
+	\newenvironment{indentation}[3]%
+	{\par\setlength{\parindent}{#3}
+	\setlength{\leftmargin}{#1}       \setlength{\rightmargin}{#2}%
+	\advance\linewidth -\leftmargin       \advance\linewidth -\rightmargin%
+	\advance\@totalleftmargin\leftmargin  \@setpar{{\@@par}}%
+	\parshape 1\@totalleftmargin \linewidth\ignorespaces}{\par}%
+\makeatother 
+
+% new LaTeX commands
+
+
+\begin{document}
+
+
+Given the equation $\frac{d^2s}{{dt}^2}=-ks$, now we want to find a
+parametrization of this cycloid.
+
+The second law gives us:
+
+Combining these two equations
+
+s=g/K sin$\theta{}$
+
+Differentiate the equation
+
+ds = g/K cos$\theta{}$ d$\theta{}$ (1)
+
+On the other hand, ds=.$\sqrt{{(\frac{dx}{dt})}^2+{(\frac{dy}{dt})}^2}d\theta{}$
+And Since the normal component of the speed is 0:
+
+C
+
+\begin{equation}
+\frac{dx}{dt}sin\theta{}=\frac{dy}{dt}cos\theta{}
+%eq1
+\end{equation}
+
+ombining the two equation, we get ds = dx / cos $\theta{}$,
+
+
+
+\[
+\frac{ds}{dt}=\frac{dx}{cos\theta{}dt}
+\]
+
+substitute (1) into it
+
+
+
+\[
+\frac{dx}{dt}=\frac{g}{2k}(1+cos2\theta{})\frac{d\theta{}}{dt}
+\]
+
+From equation(2) we get
+
+
+
+\[
+\frac{dy}{dt}=\frac{g}{2k}sin2\theta{}\frac{d\theta{}}{dt}
+\]
+
+Multiply both sides with dt and integrate both sides, we get
+
+
+\[
+x=\intdx=\int\frac{g}{2k}(1+cos2\theta{})d\theta{}=\frac{g}{4k}\left(2\theta{}+sin2\theta{}\right)+C1
+\]
+
+
+
+
+\[
+y=\intdy=\int\frac{g}{2k}sin2\theta{}d\theta{}=-\frac{g}{4k}cos2\theta{}+C2
+\]
+
+Applying the initial conditions x = 0 and y = -g/2k , both when $\theta{}$ = 0, 
+we finally get
+
+
+\[
+x=\frac{g}{4k}\left(2\theta{}+sin2\theta{}\right)
+\]
+
+
+
+\[
+y=-\frac{g}{4k}(cos2\theta{}+1)
+\]
+
+
+Now we can show such curve is a cycloid
+
+
+
+\[
+x^{'}=\frac{g}{2k}(1+cos2\theta{})
+\]
+
+
+
+\begin{equation}
+y^{'}=\frac{g}{2k}sin2\theta{}{x'}^2+{y'}^2=\frac{g^2}{2k^2}(1+cos2\theta{})
+%eq2
+\end{equation}
+
+(2)
+
+Since the conservation of mechanical energy gives us ,$\frac{1}{2}mv^2=mgy$
+
+,
+
+\[
+v=\sqrt{2gy}
+\]
+
+plugging into
+$v=\frac{ds}{dt}$
+
+\[
+dt=\frac{ds}{\sqrt{2gy}}
+\]
+
+
+
+
+\[
+=\frac{\sqrt{{dx}^2+{dy}^2}}{\sqrt{2gy}}
+\]
+
+From equation (1) and (2), we can get
+
+
+\[
+dt=\frac{\sqrt{\frac{g^2}{2k^2}(1+cos2\theta{})}}{\sqrt{\frac{g^2}{2k}(1+cos2\theta{})}}d\theta{}
+\]
+
+
+
+
+\[
+=\sqrt{\frac{1}{k}}d\theta{}
+\]
+
+Integrate both sides
+
+
+
+\[
+T=\int_0^{\pi{}}\sqrt{\frac{1}{k}}d\theta{}=\sqrt{\frac{1}{k}}\pi{}
+\]
+
+Now considering an intermediate point
+
+${\theta{}}_0$Since the conservation of mechanical energy gives us
+,$\frac{1}{2}mv^2=mgy-mgy_0$
+
+,
+
+\[
+v=\sqrt{2g(y-y_0)}
+\]
+
+plugging into
+$v=\frac{ds}{dt}$
+
+\[
+dt=\frac{ds}{\sqrt{2g(y-y_0)}}
+\]
+
+
+
+\[
+=\frac{\sqrt{{dx}^2+{dy}^2}}{\sqrt{2g(y-y_0)}}
+\]
+
+
+
+
+\[
+=\frac{\sqrt{\frac{g^2}{2k^2}(1+cos2\theta{})}}{\sqrt{-\frac{g^2}{2k}(1+cos2\theta{}-1-cos2{\theta{}}_0)}}d\theta{}
+\]
+
+Then integrate both sides, after computing it with computer software
+
+
+
+\[
+T=\sqrt{\frac{1}{k}}\pi{}
+\]
+
+That shows T is the same for any point of the curve. Therefore, the curve is a
+cycloid.
+
+Reference
+
+Weisstein, Eric W. "Tautochrone Problem." From MathWorld--A Wolfram Web
+Resource. http://mathworld.wolfram.com/TautochroneProblem.html
+
+
+\end{document}
